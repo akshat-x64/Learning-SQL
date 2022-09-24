@@ -1,0 +1,41 @@
+//ddl commands
+#to create a table
+create table employee (
+  emp_Id int not null,
+  first_Name varchar (20),
+  last_Name varchar (20),
+  salary int,
+  primary key (emp_id)
+);
+
+
+#to view  table
+select * form employee;
+
+#to see structure of table
+describe employee;
+
+#to add new column in table 
+alter table employee add column contact int (10);
+
+#to rename column in table
+alter table employee rename contact to job_code;
+
+#to delete records in table 
+truncate table emploee;
+
+#to delete whole table
+drop table employee;
+
+
+//dml commands
+
+#to insert data into table
+insert into employee(emp_id,first_name,last_name,salary)
+values(06,"Akshay","Nagadiya",20000);
+
+#to update data in table
+update employee set last_name = "akshat" where emp_id=1;
+
+#to delete data in table
+delete from employee where emp_id in (4);
