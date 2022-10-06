@@ -60,3 +60,43 @@ select * from employee where not first_name="akshat";
 
 //comparison operator
 = ,<=,>=,<,>,<>,!=
+
+
+//more special operators
+// and command
+select * from employee where salary between 0 and 100000;
+
+//like operator
+select * from employee where last_name like "a%";
+
+// in operator exactly finding values
+select * from employee where salary in (30000,25000);
+
+//finding unique values
+select distinct(first_name) from employee;
+
+//finding null vaalues in row
+select * from employee where salary is null;
+
+
+
+//more aggregation function
+//finding avg in section
+select avg(salary) from employee;
+
+
+//returns number of table rows
+select count(*) from employee;
+
+
+//find max
+select max(salary) from employee;
+
+
+//find min
+select min(salary) from employee;
+
+
+
+//sum
+select sum(salary) from employee;
