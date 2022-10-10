@@ -100,3 +100,12 @@ select min(salary) from employee;
 
 //sum
 select sum(salary) from employee;
+
+
+
+//group by clause
+select first_name,max(salary),dept from employee group by dept;
+
+
+//having clause
+select first_name,max(salary),dept from employee group by dept having count(dept)>=2;
