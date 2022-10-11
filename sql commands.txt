@@ -121,4 +121,7 @@ select product_name from product1
 union
 select product_name from product2;
 
-
+//union all
+select product_name from Product1 
+union all
+select product_name from Product2;
