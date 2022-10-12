@@ -125,3 +125,20 @@ select product_name from product2;
 select product_name from Product1 
 union all
 select product_name from Product2;
+
+
+
+//sql join
+//inner_join
+select e.employee_id,e.first_name,e.last_name,d.dept_id,d.dept_name
+from employees  e
+innjer join departments f on e.dept_id=d.dept_idl
+
+
+
+
+
+
+
+
+
