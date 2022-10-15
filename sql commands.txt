@@ -19,7 +19,7 @@ describe employee;
 alter table employee add column contact int (10);
 
 #to rename column in table
-alter table employee rename contact to job_code;
+alter table employee rename column contact to job_code;
 
 #to delete records in table 
 truncate table emploee;
