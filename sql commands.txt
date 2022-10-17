@@ -134,6 +134,67 @@ select e.employee_id,e.first_name,e.last_name,d.dept_id,d.dept_name
 from employees  e
 innjer join departments f on e.dept_id=d.dept_idl
 
+//left join
+//if the condition dosent meet then left table will have null valuesss
+select e.first_name,e.last_name,e.salary,d.dep_id,d.location_id
+from e e
+left  join d d
+on e.dept_id=d.dep_id;
+
+//right join
+select e.first_name,e.last_name,e.salary,d.dep_id from employee e right join department d on
+   e.dept_id=d.dep_id;
+
+//full outer join via union
+
+select e.first_name,e.last_name,e.salary,d.dep_id,d.location_id from employee e left join department d on e.dept_id=d.dep_id union select e.first_name,e.last_name,e.salary,d.dep_id,d.location_id from employee e right join department d on e.dept_id = d.dep_id;
+
+//sql cross join
+//returns cartesian product
+//like if we have 2 table 3 and 4 columns each this will return 3*4 = 12 rows;
+ select * from employee cross join department;
+
+
+//exersise
+q:- find all the players who where present in the test match 1 or test match 2;
+# select player_name from cricket_1 union select player_name from cricket_2;
+
+q:- write a mysql query to find the players from the test match 1 having popularity higher than the average popularity
+#  select player_name,popularity from cricket_1 where popularity > (select avg(popularity) from cricket_1);
+#  select avg(popularity) from cricket_1;
+
+
+q:- find player_id and player name that are common in the test match 1 and test match 2
+# select player_name,player_id from cricket_1 where cricket_1.player_id in (select player_id from cricket_2);
+
+q:- retrieve player_id ,runs and player_name from cricket_1 table and display list of the players where the runs are more than the average runs
+#   select player_id,runs from cricket_1 where runs > (select avg(runs) from cricket_1);
+#   select avg(runs) from cricket_1;	
+
+q:- write a query to extract the player_id, runs and player_name from the table "cricket_1" where the runs are greater than 50
+#   select player_id,runs,player_name from cricket_1 where runs>50;
+
+
+q:- write a query to extract all the columns where player_name starts with y and ends with "v"
+#   select * from cricket where player_name like "y%v";
+
+q:- write a query to extract all the columns where player_name starts does not end with "t"
+# select * form cricket_1 where player_name not like "%t";
+
+q:- Extract all player_id and player_name of the players where the charisma is null;
+# select player_id,player_name from cricket_1 where charisma is not null;
+
+q:- seperate all the players_id into singlenumeric ids(example pl1 = 1)
+# select player_id,substar(player_id,3) from cricket_2;
+
+q:- calculate char length 
+# select char_length(product) from bank_details where product="paycard";
+
+q:- display only one record in table
+# select * from bank_details limit 1;
+
+q:- display the first five characters of the geo location of bank_details
+# select substr(geo_location,1,5) from bank_details;
 
 
 
