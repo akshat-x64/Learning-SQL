@@ -40,9 +40,6 @@ update employee set last_name = "akshat" where emp_id=1;
 #to delete data in table
 delete from employee where emp_id in (4);
 
-
-
-
 //where clause
 select * from employee where emp_id=02;
 
